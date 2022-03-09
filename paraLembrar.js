@@ -18,7 +18,17 @@ const funcaoArrow2 = (dez, nove) => {
 }
 console.log(funcaoArrow2(10,9))
 
+/* | | | | | | | | High order functions (funções que recebem uma
+                                         ou  mais  funções  como 
+                                         argumento ,  retornando
+                                         outra      função    )*/
+                           
 // | | | | | | | | splice
 
 const lista;
-lista.splica(1,2,"adicionar");
+lista.splice(1,2,"adicionar");
+
+// | | | | | | | | concat
+
+const lita1, lista2 = []
+const lista3 = lista1.concat(lista2)
