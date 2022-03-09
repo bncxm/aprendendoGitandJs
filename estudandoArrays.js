@@ -1,7 +1,7 @@
 
-let readlineSync = require('readline-syn');
+var readlineSync = require('readline-sync');
 
-const lista = [];
+let lista = [];
 
 lista.push(10, 20, 30, 40);
 
@@ -23,6 +23,8 @@ function listarElementos() {
         }
     }
 }
+//console.log(listarElementos);
+
 function calcularArea(lista) {
 
     let soma = 0;
@@ -33,17 +35,25 @@ function calcularArea(lista) {
 
     return media
 }
-function excluirElementos(){
+//console.log(calcularArea(lista));
 
-    lista.pop();
-}
+ function excluirElementos(){
+    
+    const elemento = parseInt(readlineSync.question("Informe o valor que deseja remover "));
+    for (let i = 0; i < lista.length; i++) {
+        if (lista[i] == elemento){
+            lista.splice(i,1);
+        }
+    }
+ }
+//   excluirElementos();
+//   console.log(lista);
+
 function adicionarElementos(){
 
-    let elemento = num(readlineSync.question("Informe um valor para ser adicionada ao fim da lista: "));
+    const elemento = parseInt(readlineSync.question("Informe um valor para ser adicionada ao fim da lista: "));
     lista.push(elemento);
 
 }
-
-
-
-console.log(listarElementos());
+//  adicionarElementos();
+//  console.log(lista);
