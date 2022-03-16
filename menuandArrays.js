@@ -1,11 +1,14 @@
 
 var readlineSync = require('readline-sync');
-
 let lista = [];
+let aux;
+let op;
 
-lista.push(10, 20, 30, 40);
 
-let op= null;
+aux = parseInt(readlineSync.question("Digite a quantidade de elementos que você deseja adicionar à lista:"));
+populandoLista(aux, lista);
+
+
 while (op != 0) {
 
     console.log("MENU DE OPÇÕES\n"
@@ -16,12 +19,18 @@ while (op != 0) {
         + "5: Adicionar um valor.\n"
         + "0: Sair.\n");
 
-    op = parseInt(readlineSync.question("Escolha o número referente a ação desejada dentre as opções do MENU:"));
+    op = parseInt(readlineSync.question("Escolha o número referente a ação desejada dentre as opções do MENU: "));
 
     executarMenu(op);
 }
 
 //FUNÇÕES//
+
+function populandoLista(aux,lista){
+    for (let i = 0; i<aux; i++){
+        lista.push(parseInt(readlineSync.question("Digite o " + parseInt(i+1) +"° valor para ser adicionado: ")));
+    }
+}
 
 function executarMenu() {
     switch (op) {

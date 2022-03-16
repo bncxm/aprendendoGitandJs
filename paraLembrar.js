@@ -1,13 +1,13 @@
-// | | | | | | | | String
+                  //String
 
 let nove = "nove";
 console.log (`Dez é maior que ${nove}`);
 
-// | | | | | | | | operador ternario 
+                  //operador ternario 
 
 console.log(10 >= 9 ? "Dez é maior" : "Dez é menor");
 
-// | | | | | | | | ArrowFunction
+                  //ArrowFunction
 
 const funcaoArrow = nove => `Dez é maior que ${nove}`;
 console.log(funcaoArrow(9))
@@ -23,12 +23,39 @@ console.log(funcaoArrow2(10,9))
                                          argumento ,  retornando
                                          outra      função    )*/
                            
-// | | | | | | | | splice
+                  //splice
 
-const lista;
+let lista;
 lista.splice(1,2,"adicionar");
 
-// | | | | | | | | concat
+                  //concat
 
-const lita1, lista2 = []
+let lita1, lista2 = []
 const lista3 = lista1.concat(lista2)
+
+                  //map
+
+const notas = [10, 9, 8, 7, 6];
+const notasAtualizadas = notas.map( nota => nota == 10 ? nota : ++nota);
+console.log(notasAtualizadas);
+
+                  //hmmmm
+
+const alunos = [];
+const nota = [];
+
+alunos.push('ana', 'bia', 'carlos', 'danial', 'eduardo', 'fabio');
+nota.push(1, 2, 3, 4, 5, 6);
+
+let alunosEnotas = [alunos, nota]
+
+const nomeEnota = (nome) => {
+    if (alunosEnotas[0].includes(nome)) {
+        indice = alunosEnotas[0].indexOf(nome);
+        return alunosEnotas[0][indice] + ', sua nota é ' + alunosEnotas[1][indice];
+    } else {
+        return 'Aluno não matriculado.';
+    }
+}
+
+console.log(nomeEnota("ana"));
