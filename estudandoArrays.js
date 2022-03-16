@@ -49,39 +49,40 @@ function executarMenu() {
     }
 }
 
-    function listarElementos() {
+function listarElementos() {
 
-        console.log("Esta lista possui os elementos ")
-        for (let i = 0; i < lista.length; i++) {
+    console.log("Segue os elementos da lista com seus respectivos índices:")
+    for (let i = 0; i < lista.length; i++) {
 
-            console.log("Índice " + i + ": " + lista[i]);
+        console.log("Índice " + i + ": " + lista[i]);
+    }
+    console.log("\n");
+}
+
+function calcularMedia(lista) {
+    let media = 0;
+
+    //callback
+    lista.forEach(valor => {
+        media += valor / lista.length
+    });
+
+    console.log("A média é: " + media + "\n");
+}
+
+function excluirElementos() {
+
+    const elemento = parseInt(readlineSync.question("Informe o valor que deseja remover:"));
+    for (let i = 0; i < lista.length; i++) {
+        if (lista[i] == elemento) {
+            lista.splice(i, 1);
         }
     }
+}
 
-    function calcularMedia(lista) {
+function adicionarElementos() {
 
-        let soma = 0;
-        for (let i = 0; i < lista.length; i++) {
-            soma = soma + lista[i];
-        }
-        media = soma / lista.length;
+    const elemento = parseInt(readlineSync.question("Informe um valor para ser adicionada ao fim da lista: "));
+    lista.push(elemento);
 
-        console.log("A média é: " + media);
-    }
-
-    function excluirElementos() {
-
-        const elemento = parseInt(readlineSync.question("Informe o valor que deseja remover:"));
-        for (let i = 0; i < lista.length; i++) {
-            if (lista[i] == elemento) {
-                lista.splice(i, 1);
-            }
-        }
-    }
-
-    function adicionarElementos() {
-
-        const elemento = parseInt(readlineSync.question("Informe um valor para ser adicionada ao fim da lista: "));
-        lista.push(elemento);
-
-    }
+}
