@@ -11,7 +11,7 @@ populandoLista(aux, lista);
 
 while (op != 0) {
 
-    console.log("MENU DE OPÇÕES\n"
+    console.log("\nMENU DE OPÇÕES\n"
         + "1: Imprimir lista.\n"
         + "2: Imprimir lista como 'índice - elemento'.\n"
         + "3: Calcular média.\n"
@@ -65,7 +65,6 @@ function listarElementos() {
 
         console.log("Índice " + i + ": " + lista[i]);
     }
-    console.log("\n");
 }
 
 function calcularMedia(lista) {
@@ -76,17 +75,21 @@ function calcularMedia(lista) {
         media += valor / lista.length
     });
 
-    console.log("A média é: " + media + "\n");
+    console.log("A média é: " + media);
 }
 
 function excluirElementos() {
 
+    let mensagem = "O valor informado não existe na lista.\nPor favor repita o processo de exclusão."
     const elemento = parseInt(readlineSync.question("Informe o valor que deseja remover:"));
     for (let i = 0; i < lista.length; i++) {
         if (lista[i] == elemento) {
             lista.splice(i, 1);
+            mensagem = "O valor" + elemento + "foi removido da lista";
         }
     }
+
+    console.log(mensagem);
 }
 
 function adicionarElementos() {
